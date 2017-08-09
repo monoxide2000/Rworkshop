@@ -22,6 +22,7 @@ mathjax: local
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+tutorial::go_interactive(greedy=FALSE)
 ```
 
 
@@ -68,15 +69,12 @@ library(highcharter)
 Time <- seq(-1,3, length=400)
 Values <- rnorm(400, mean=2, sd=4)
 highchart(height=400, width=600) %>% hc_title(text="This is a title") %>% hc_add_series(data=data.frame(Time,Values), name = "Normal samples", type = "line", mapping=hcaes(x=Time, y=Values)) %>% hc_tooltip(crosshairs = TRUE, headerFormat = "", pointFormat = "{series.name}:<br/> <b>Values</b>:{point.y}<br/> <b>Time</b>: {point.x}<br/>.") %>% hc_drilldown()
-
 ```
 
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
 
-```{r}
+```{r, tut=TRUE}
+
 a <- 2
 b <- 3
 
@@ -84,7 +82,9 @@ a + b
 ```
 
 
-
+```{r}
+print("Hello world")
+```
 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -92,7 +92,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 
 
-```{r}
+```{r, tut = TRUE}
 a <- 2
 b <- 3
 
